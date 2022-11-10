@@ -1,9 +1,17 @@
 package org.example.entity;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee {
+
     private String name;
+
     private String surname;
+
     private int id;
+
     private Address address;
 
     public Employee() {
@@ -34,6 +42,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee :"+name+ "\n" +"surname :'" +surname +"\n"+ "Id :" + id+"\n"+"Address :"+address ;
+        return "Employee :"+name+ "\n" +"surname :" +surname +"\n"+ "Id :" + id+"\n"+"Address :"+address ;
     }
 }

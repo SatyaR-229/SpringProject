@@ -1,6 +1,9 @@
 package spring.example.entity;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
+
 
 public class Library {
     private String libraryNo;

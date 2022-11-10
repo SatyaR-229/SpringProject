@@ -1,7 +1,10 @@
 package org.example.entity;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Address {
-   private  String Area;
+   private  String area;
    private String pincode;
    private String country;
    private long mobileNo;
@@ -11,7 +14,7 @@ public class Address {
     }
 
     public Address(String area, String pincode, String country, long mobileNo, String state) {
-        Area = area;
+        area = area;
         this.pincode = pincode;
         this.country = country;
         this.mobileNo = mobileNo;
@@ -19,7 +22,7 @@ public class Address {
     }
 
     public void setArea(String area) {
-        Area = area;
+        this.area = area;
     }
 
     public void setPincode(String pincode) {
@@ -40,12 +43,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
-                "Area='" + Area + '\'' +
-                ", pincode='" + pincode + '\'' +
-                ", country='" + country + '\'' +
-                ", mobileNo=" + mobileNo +
-                ", state='" + state + '\'' +
-                '}';
+        return "Area :"+area+"\n"+"Pincode :"+pincode+"\n"+"Country :"+country+"\n"+"Mobile No :"+mobileNo+"\n"+"State :"+state;
     }
 }
