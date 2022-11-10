@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="emp1" class="org.example.entity.Employee">
+        <property name="name" value="satyavan"/>
+        <property name="surname" value="rajbhar"/>
+        <property name="rollNo" value="123562"/>
+        <property name="address" ref="add1"/>
+    </bean>
+
+    <bean id="add1" class="org.example.entity.Address">
+        <property name="area" value="Shivai Nagar"/>
+        <property name="country" value="india"/>
+        <property name="pincode" value="345675"/>
+        <property name="mobileNo" value="9878975335"/>
+        <property name="state" value="maharashtra"/>
+    </bean>
+
+</beans>
