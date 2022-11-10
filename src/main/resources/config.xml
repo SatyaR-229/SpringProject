@@ -6,7 +6,7 @@
     <bean id="emp1" class="org.example.entity.Employee">
         <property name="name" value="satyavan"/>
         <property name="surname" value="rajbhar"/>
-        <property name="rollNo" value="123562"/>
+     <property name="rollNo" value="1234"/>
         <property name="address" ref="add1"/>
     </bean>
 

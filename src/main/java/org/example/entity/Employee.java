@@ -3,16 +3,16 @@ package org.example.entity;
 public class Employee {
     private String name;
     private String surname;
-    private int rollNo;
+    private int id;
     private Address address;
 
     public Employee() {
     }
 
-    public Employee(String name, String surname, int rollNo,Address address) {
+    public Employee(String name, String surname, int id,Address address) {
         this.name = name;
         this.surname = surname;
-        this.rollNo = rollNo;
+        this.id = id;
         this.address = address;
     }
 
@@ -24,8 +24,8 @@ public class Employee {
         this.surname = surname;
     }
 
-    public void setRollNo(int rollNo) {
-        this.rollNo = rollNo;
+    public void setRollNo(int id) {
+        this.id= id;
     }
 
     public void setAddress(Address address) {
@@ -34,6 +34,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee :"+name+ "\n" +"surname :'" +surname +"\n"+ "rollNo :" + rollNo+"\n"+"Address :"+address ;
+        return "Employee :"+name+ "\n" +"surname :'" +surname +"\n"+ "Id :" + id+"\n"+"Address :"+address ;
     }
 }
