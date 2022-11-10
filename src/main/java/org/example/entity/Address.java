@@ -2,7 +2,6 @@ package org.example.entity;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Address {
    private  String area;
    private String pincode;

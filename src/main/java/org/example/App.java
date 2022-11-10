@@ -4,6 +4,7 @@ import org.example.entity.Address;
 import org.example.entity.Employee;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,7 +16,6 @@ import spring.example.entity.Student;
  *
  */
 @Configuration
-@ComponentScan
 public class App 
 {
     public static void main( String[] args )
@@ -25,25 +25,33 @@ public class App
 //        Employee employee = (Employee) applicationContext.getBean("emp1");
 //        System.out.println(employee);
         // without using xml configuration
+//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(App.class);
+//        Employee e1 = (Employee) applicationContext.getBean("employee");
+//        Address add1 = (Address) applicationContext.getBean("address");
+//        add1.setArea("shivaiNagar");
+//        add1.setCountry("india");
+//        add1.setMobileNo(987678689l);
+//        add1.setPincode("345748");
+//        add1.setState("maharashtra");
+//
+//
+//        e1.setAddress(add1);
+//        e1.setName("satya");
+//        e1.setRollNo(234);
+//        e1.setSurname("rajbhar");
+//        System.out.println(e1);
+
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(App.class);
-        Employee e1 = (Employee) applicationContext.getBean("employee");
-        Address add1 = (Address) applicationContext.getBean("address");
-        add1.setArea("shivaiNagar");
-        add1.setCountry("india");
-        add1.setMobileNo(987678689l);
-        add1.setPincode("345748");
-        add1.setState("maharashtra");
-
-
-        e1.setAddress(add1);
-        e1.setName("satya");
-        e1.setRollNo(234);
-        e1.setSurname("rajbhar");
-        System.out.println(e1);
+        Employee employee = (Employee) applicationContext.getBean("getEmployee");
+        System.out.println(employee);
+     }
 
 
 
+        @Bean
+        public Employee getEmployee()
+        {
+            return new Employee("satya","rajbhar",123,new Address("Shivai Nagar","23982","india",9876789786l,"maharashtra"));
+        }
 
-
-    }
 }
