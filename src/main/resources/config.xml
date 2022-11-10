@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
- https://www.springframework.org/schema/beans/spring-beans.xsd">
+ https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
     <bean id="emp1" class="org.example.entity.Employee">
         <property name="name" value="satyavan"/>
         <property name="surname" value="rajbhar"/>
@@ -17,5 +17,31 @@
         <property name="mobileNo" value="9878975335"/>
         <property name="state" value="maharashtra"/>
     </bean>
+
+    <!-- using constructor injection -->
+
+    <bean id="stud1" class="spring.example.entity.Student">
+       <constructor-arg name="id" value="123564" />
+        <constructor-arg name="name" value="suraj"/>
+        <constructor-arg name="roll" value="123"/>
+        <constructor-arg name="libInfo" ref="lib1"/>
+
+    </bean>
+
+    <bean id="lib1" class="spring.example.entity.Library">
+        <constructor-arg name="book" ref="booklist"/>
+        <constructor-arg name="libraryNo" value="1234"/>
+
+    </bean>
+    <util:list id="booklist" list-class="java.util.ArrayList" value-type="java.lang.String">
+        <value>ABSALOM, ABSALOM</value>
+        <value>A TIME TO KILL </value>
+        <value>THE HOUSE OF MIRTH </value>
+        <value>EAST OF EDEN BY JOHN STEINBECK</value>
+        <value>THE SUN ALSO RISES</value>
+        <value>VILE BODIES</value>
+    </util:list>
+
+
 
 </beans>
